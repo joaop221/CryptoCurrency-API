@@ -13,14 +13,14 @@
  *      nickname: FnConsultaMoedas
  */
 'use strict';
- 
-const objModel = require('../model');
 
-function FnConsultaMoedasOn (request, response) {
+const objService = require('../service');
+ 
+function FnConsultaMoedasOn(request, response) {
     if (request) {
-        response.send("Sucesso");
+        response.send(objService.consultaMoedasOn());
     } else {
-        response.send("Erro");
+        response.send('Erro');
     }
 }
 

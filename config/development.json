@@ -16,13 +16,10 @@
             }
         },
         "rest": {
-            "baseUrl": {
-                "svc": "https://braziliex.com/api/v1",
-                "method": "POST"
-            },
+            "baseUrl": "braziliex.com",
             "methods": {
-                "moedasDisponiveis": {
-                    "svc": "http://localhost:8383/v2/credenciamento",
+                "moedasOn": {
+                    "svc": "/api/v1/public/currencies",
                     "method": "GET"
                 }
             }            

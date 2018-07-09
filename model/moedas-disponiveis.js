@@ -2,7 +2,7 @@
 
 const objLodash = require('lodash');
 
-function FnParseMoedasDisponiveis(currencys) {
+function FnParseMoedasOn(currencys) {
     let moedas = [];
 
     for(var key in objLodash.keys(currencys)) {
@@ -16,8 +16,10 @@ function FnParseMoedasDisponiveis(currencys) {
             ativo: objLodash.get(currencys[key], 'active', {}) === 1,
         });
     }
+
+    return moedas;
 }
 
-module.exports.parseMoedasDisponiveis = (currencys) => {
-    FnParseMoedasDisponiveis(currencys);
+module.exports.parseMoedasOn = (currencys) => {
+    FnParseMoedasOn(currencys);
 } 
