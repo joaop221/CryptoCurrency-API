@@ -1,0 +1,37 @@
+{
+    "environment": "development",
+    "protocol": "http",
+    "port": 3001,
+    "connector": {
+        "mongoServer": {
+            "connectionConfig": {
+                "userName": "",
+                "password": "",
+                "server": "",
+                "options": {
+                    "encrypt": true,
+                    "database": "mongoDB",
+                    "port": 0
+                }
+            }
+        },
+        "rest": {
+            "baseUrl": {
+                "svc": "https://braziliex.com/api/v1",
+                "method": "POST"
+            },
+            "methods": {
+                "moedasDisponiveis": {
+                    "svc": "http://localhost:8383/v2/credenciamento",
+                    "method": "GET"
+                }
+            }            
+        }
+    },
+    "swagger": {
+        "version": "1.0", 
+        "title": "Swagger docs crypto currency",
+        "description": "optional description",
+        "url": "/swagger"
+    }
+}
