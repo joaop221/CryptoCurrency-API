@@ -2,8 +2,8 @@
 
 const objConsultaMoedasOn = require( './consulta-moedas-on');
 
-function FnConsultaMoedasOn(request, response) {
-    objConsultaMoedasOn.consultaMoedasOn(request, response);
+function FnConsultaMoedasOn(request, respCallback) {
+    objConsultaMoedasOn.consultaMoedasOn(request, respCallback);
 }
 
 module.exports = {

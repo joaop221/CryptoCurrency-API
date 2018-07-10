@@ -15,12 +15,19 @@
 'use strict';
 
 const objService = require('../service');
- 
+const objUtils = require('../utils/util')
+
 function FnConsultaMoedasOn(request, response) {
     if (request) {
-        response.send(objService.consultaMoedasOn());
+        objService.consultaMoedasOn(request, (objError, objResponse) => {
+            if (objError) {
+                return response.status(500).json(objError).end();
+            } else {
+                return response.json(objResponse);
+            }
+        });
     } else {
-        response.send('Erro');
+        return response.status(500).json(objError).end();
     }
 }
 

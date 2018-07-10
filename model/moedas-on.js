@@ -5,7 +5,7 @@ const objLodash = require('lodash');
 function FnParseMoedasOn(currencys) {
     let moedas = [];
 
-    for(var key in objLodash.keys(currencys)) {
+    for(let key of objLodash.keys(currencys)) {
         moedas.push({
             nome: objLodash.get(currencys[key], 'name', {}),
             taxaRetirada: objLodash.get(currencys[key], 'txWithdrawalFee', {}),
@@ -21,5 +21,5 @@ function FnParseMoedasOn(currencys) {
 }
 
 module.exports.parseMoedasOn = (currencys) => {
-    FnParseMoedasOn(currencys);
+    return FnParseMoedasOn(currencys);
 } 

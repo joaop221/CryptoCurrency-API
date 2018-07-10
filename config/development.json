@@ -16,7 +16,7 @@
             }
         },
         "rest": {
-            "baseUrl": "braziliex.com",
+            "baseUrl": "https://braziliex.com",
             "methods": {
                 "moedasOn": {
                     "svc": "/api/v1/public/currencies",

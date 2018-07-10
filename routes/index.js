@@ -1,11 +1,9 @@
 'use strict';
 
+const express = require('express');
+const router = express.Router();
 const objController = require('../controller');
 
-module.exports.configure = (app) => {
+router.get('/publico/moedas', objController.consultaMoedasOn);
 
-    app.get('/publico/moedas', (req, res) => {
-        objController.consultaMoedasOn(req, res)
-    });
-    
-};
+module.exports = router

@@ -1,18 +1,23 @@
 'use strict';
 
+const request = require('request');
 const objModel = require('../model');
 const objUtils = require('../utils/util');
 
-function FnConsultaMoedasOn() {
-    objUtils.executarHttpRequest('moedasOn', null, (response) => {
-        if (response.statusCode === 200) {
-            return objModel.parseMoedasOn(response)
+function FnConsultaMoedasOn(objRequest, respCallback) {
+    let objOptions = objUtils.montaRestRequest('moedasOn', null);
+
+    request(objOptions, (error, response) => {
+        if (!error && response.statusCode === 200) {
+            let objRetorno = objModel.parseMoedasOn(JSON.parse(response.body));
+            respCallback(null, objRetorno);
         } else {
-            return objModel.parseErros(response, "/publico/moedas");
+            let objRetorno = objModel.parseErros(error, "/publico/moedas");
+            respCallback(objRetorno, null);
         }
     });
 }
 
-module.exports.consultaMoedasOn = () => {
-    FnConsultaMoedasOn();
+module.exports.consultaMoedasOn = (objRequest, respCallback) => {
+    FnConsultaMoedasOn(objRequest, respCallback);
 }
