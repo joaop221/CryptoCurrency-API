@@ -1,10 +1,15 @@
 'use strict';
 
-const objMoedasDisponiveis = require('./moedas-on');
+const objMoedasOn = require('./moedas-on');
+const objMoedasValor = require('./moedas-valor');
 const objErros = require('./erros');
 
 function FnParseMoedasOn(currencys) {
-    return objMoedasDisponiveis.parseMoedasOn(currencys);
+    return objMoedasOn.parseMoedasOn(currencys);
+}
+
+function FnParseMoedasValor(currencys) {
+    return objMoedasValor.parseMoedasValor(currencys);
 }
 
 function FnParseErros(erros, metodo) {
@@ -13,6 +18,7 @@ function FnParseErros(erros, metodo) {
 
 module.exports = {
     parseMoedasOn: FnParseMoedasOn,
+    parseMoedasValor: FnParseMoedasValor,
     parseErros: FnParseErros
 };
 

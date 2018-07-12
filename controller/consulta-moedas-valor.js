@@ -5,20 +5,20 @@
  */
 /**
  * @swagger
- * path: /publico/moedas
+ * path: /publico/moedas/valor
  * operations:
  *   -  httpMethod: GET
- *      summary: Api de consulta a crypto moedas
- *      notes: Api de consulta a crypto moedas
- *      nickname: FnConsultaMoedas
+ *      summary: Api de consulta a valor de crypto moedas
+ *      notes: Api de consulta a valor de crypto moedas
+ *      nickname: FnConsultaMoedasValor
  */
 'use strict';
 
 const objService = require('../service');
 
-function FnConsultaMoedasOn(request, response) {
+function FnConsultaMoedasValor(request, response) {
     if (request) {
-        objService.consultaMoedasOn(request, (objError, objResponse) => {
+        objService.consultaMoedasValor(request, (objError, objResponse) => {
             if (objError) {
                 return response.status(500).json(objError).end();
             } else {
@@ -30,6 +30,6 @@ function FnConsultaMoedasOn(request, response) {
     }
 }
 
-module.exports.consultaMoedasOn = (request, response) => {
-    FnConsultaMoedasOn(request, response);
+module.exports.consultaMoedasValor = (request, response) => {
+    FnConsultaMoedasValor(request, response);
 }

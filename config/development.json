@@ -21,6 +21,10 @@
                 "moedasOn": {
                     "svc": "/api/v1/public/currencies",
                     "method": "GET"
+                },
+                "moedasValor":{ 
+                    "svc": "/api/v1/public/ticker",
+                    "method": "GET"
                 }
             }            
         }

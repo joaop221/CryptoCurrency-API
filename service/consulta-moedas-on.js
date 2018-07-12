@@ -12,7 +12,7 @@ function FnConsultaMoedasOn(objRequest, respCallback) {
             let objRetorno = objModel.parseMoedasOn(JSON.parse(response.body));
             respCallback(null, objRetorno);
         } else {
-            let objRetorno = objModel.parseErros(error, "/publico/moedas");
+            let objRetorno = objModel.parseErros(error, "/publico/moedas/on");
             respCallback(objRetorno, null);
         }
     });
